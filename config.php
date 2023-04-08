@@ -5,7 +5,7 @@
 // BURL base url
 define("BURL","http://localhost/test/medical_services/");
 define("BURLA","http://localhost/test/medical_services/admin/");
-define("assets","http://localhost/test/medical_services/assets/");
+define("ASSETS","http://localhost/test/medical_services/assets/");
 //base link
 define("BL",__DIR__."/");
 define("BLA",__DIR__.'/admin/');
