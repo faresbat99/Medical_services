@@ -1,3 +1,9 @@
+<?php
+
+if (!isset($_SESSION['admin_name'])) {
+    header('Location: ' . BURLA . 'login.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +37,7 @@
                             Cities
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Add</a></li>
+                            <li><a class="dropdown-item" href="<?php echo BURLA . "cities/add.php" ?>">Add</a></li>
                             <li><a class="dropdown-item" href="#">View All</a></li>
                         </ul>
                     </li>
@@ -57,9 +63,12 @@
                             Admins
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?php echo BURLA.'action/add.php'; ?>">Add</a></li>
+                            <li><a class="dropdown-item" href="<?php echo BURLA . 'action/add.php'; ?>">Add</a></li>
                             <li><a class="dropdown-item" href="#">View All</a></li>
                         </ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?php echo BURLA . "logout.php" ?>"> Logout</a>
+                    </li>
                     </li>
                 </ul>
             </div>

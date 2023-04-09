@@ -1,6 +1,9 @@
-<?php 
-// define constance 
+<?php
 
+// start new sesssion eveytime 
+session_start();
+
+// define constance 
 // links 
 // BURL base url
 define("BURL","http://localhost/test/medical_services/");

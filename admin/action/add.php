@@ -7,8 +7,8 @@ require_once(BL . "functions/validate.php");
 <?php
 $error_fields = [];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
+    $name = mysqli_escape_string($conn, $_POST['name']);
+    $email = mysqli_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
     if (checkEmpty($name) and checkEmpty($email) and checkEmpty($password)) {
         if (validateEmail($email)) {
@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="col-sm-6 offset-sm-3 border p-3">
     <h3 class="text-center p-3 bg-primary text-white">Add New Admin</h3>
+    <!--will send the data at same page -->
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <div class="form-group">
             <label>Name </label>

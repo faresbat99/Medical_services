@@ -10,8 +10,10 @@ function validateName($name)
 }
 function validateEmail($email)
 {
-    if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+$pattern="/^[a-z09-]+[_a-z09-]*@[a-z09-]+[a-z09-]*\.[a-z09-]+([a-z]{2-4})*$/";
 
+    if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match($pattern,$email)) {
+        
         return false;
     }
     return true;
