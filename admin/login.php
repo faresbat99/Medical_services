@@ -27,14 +27,14 @@ if (isset($_SESSION["admin_name"])) {
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        $email = $_POST['email'];
-        $password =  $_POST['password'];
+        $email = mysqli_escape_string($conn, $_POST['email']);
+        $password =  mysqli_escape_string($conn,$_POST['password']);
 
         if (checkEmpty($email) && checkEmpty($password)) {
 
             if (validateEmail($email)) {
                 //check auth 
-                if ($check = get_row('admin', 'admin_email', $email)) {
+                if ($check = getRow('admin', 'admin_email', $email)) {
                     // var_dump($check_password);
                     if (password_verify($password, $check["admin_password"])) {
                         $_SESSION['admin_name'] = $check['admin_name'];

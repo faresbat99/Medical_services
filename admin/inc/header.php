@@ -15,7 +15,7 @@ if (!isset($_SESSION['admin_name'])) {
     <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/style.css">
-    <title>header</title>
+    <title>Admin Dashboard</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@ if (!isset($_SESSION['admin_name'])) {
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<?php echo BURLA . "cities/add.php" ?>">Add</a></li>
-                            <li><a class="dropdown-item" href="#">View All</a></li>
+                            <li><a class="dropdown-item" href="<?php echo BURLA . "cities" ?>">View All</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

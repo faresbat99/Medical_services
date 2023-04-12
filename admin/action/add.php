@@ -16,8 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // insert_statement
             $sql = "INSERT INTO `admin` set `admin_name`='$name',`admin_email`='$email',`admin_password`='$hashed_password'";
-
-            $success_message = db_insert($sql);
+            try {
+                $success_message = db_insert($sql);
+            } catch (Exception $e) {
+                $error_message = "duplicate Email ,add new one";
+            }
         } else {
             $error_message = "Add correct email";
         }
