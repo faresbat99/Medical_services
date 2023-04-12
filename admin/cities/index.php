@@ -23,7 +23,7 @@
 
                     <td class="text-center">
                         <a href="<?php echo BURLA . 'cities/edit.php?id=' . $row['city_Id']; ?>" class="btn btn-info">Edit</a>
-                        <a href="#" class="btn btn-danger delete" data-field="city_id" data-id="<?php echo $row['city_Id']; ?>" data-table="cities">Delete</a>
+                        <a href="" class="btn btn-danger delete" data-field="city_id" data-id="<?php echo $row['city_Id']; ?>" data-table="cities">Delete</a>
                     </td>
                 </tr>
             <?php $x++;

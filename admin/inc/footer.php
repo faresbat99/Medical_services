@@ -25,11 +25,12 @@
             },
             dataType: "JSON",
             success: function(data) {
-                // console.log(data.message);
+                console.log(data.message);
                 if (data.message == "success") {
                     alert("Deleted Success");
+                    
                 } else {
-                    // alert("Error");
+                    alert("Error");
                 }
 
             }
@@ -37,6 +38,7 @@
 
     });
 </script>
+
 
 
 </body>
